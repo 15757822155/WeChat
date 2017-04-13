@@ -12,10 +12,19 @@ public class WeChatClient {
     Retrofit retrofit;
     FaceImageApi faceImageApi;
     private static WeChatClient weChatClient;
+    Retrofit mRetrofit;
+    RobotApi mRobotApi;
 
     private WeChatClient() {
+        //美女图
         retrofit = new Retrofit.Builder()
                 .baseUrl("http://gank.io/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .build();
+        //图灵机器人
+        mRetrofit = new Retrofit.Builder()
+                .baseUrl("http://www.tuling123.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build();
@@ -33,6 +42,13 @@ public class WeChatClient {
             faceImageApi = retrofit.create(FaceImageApi.class);
         }
         return faceImageApi;
+    }
+
+    public RobotApi getRobotApi() {
+        if (mRobotApi == null) {
+            mRobotApi = mRetrofit.create(RobotApi.class);
+        }
+        return mRobotApi;
     }
 
 }

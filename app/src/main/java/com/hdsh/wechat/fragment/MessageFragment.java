@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -100,6 +101,8 @@ public class MessageFragment extends Fragment {
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             Intent intent = new Intent(getActivity(), MessageActivity.class);
             intent.putExtra("communicator_name", adapter.getItem(position).getCommunicator_name());
+            intent.putExtra("communicator_image", adapter.getItem(position).getCommunicator_face());
+            Log.i(TAG, "onItemClick: " + adapter.getItem(position).getCommunicator_face());
             startActivity(intent);
         }
     };

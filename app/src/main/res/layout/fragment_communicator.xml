@@ -6,6 +6,63 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_marginStart="5dp"
+        android:divider="@drawable/divider"
+        android:orientation="vertical"
+        android:padding="2dp"
+        android:showDividers="middle">
+
+        <TextView
+            android:id="@+id/communicator_new_friend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="2dp"
+            android:drawableLeft="@drawable/ic_new_friend"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="    新的朋友"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/communicator_group_chat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="2dp"
+            android:drawableLeft="@drawable/ic_group_chat"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="    群聊"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/communicator_lable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="2dp"
+            android:drawableLeft="@drawable/ic_lable"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="    标签"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/communicator_official"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="2dp"
+            android:drawableLeft="@drawable/ic_official"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="    公众号"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
     </LinearLayout>
 </ScrollView>
